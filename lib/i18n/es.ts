@@ -9,6 +9,7 @@ export const es = {
         role: "Diseñadora UX/UI",
         headline1: "Diseño que",
         headline2: "convierte.",
+    
         cta_work: "Ver mis proyectos",
         cta_contact: "Escribime",
         scroll: "Scroll",

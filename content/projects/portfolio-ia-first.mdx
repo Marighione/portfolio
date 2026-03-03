@@ -1,12 +1,56 @@
 ---
 title: Portfolio AI-first
-description: 'Diseño y desarrollo de portfolio personal, usando IA en todo el proceso: de specs
-  a implementación.'
+titleEn: Portfolio AI-first
+description: Diseño y desarrollo de portfolio personal usando IA en todo el proceso, desde la definición de specs hasta la implementación en producción.
+descriptionEn: Design and development of a personal portfolio using AI throughout the entire process, from spec definition to production deployment.
 tags: []
 year: 2026
 coverImage: /images/projects/miniatura_portfolio.png
+role: UX Designer + Frontend Developer
+duration: 4 semanas
+team: Individual + IA como colaborador
 ---
 
-# Portfolio IA-first
+<ImagePlaceholder label="Portfolio personal — vista general del sitio" aspect="wide" />
 
-_Este caso de estudio se publicará pronto._
+## El desafío
+
+Diseñar y desarrollar un portfolio personal que no solo exhiba trabajo, sino que sea en sí mismo una demostración de criterio técnico y metodológico. El reto adicional: integrar herramientas de inteligencia artificial como parte del proceso real de trabajo, no como atajo sino como amplificador de calidad y velocidad.
+
+- Definir una identidad visual que comunique foco técnico sin perder calidez
+- Construir un sistema de temas dinámico que demuestre atención al detalle
+- Documentar el proceso para que el portfolio sea también un caso de estudio
+- Iterar rápido manteniendo estándares de calidad de producción
+- Publicar en tiempo real sin etapas de "perfeccionamiento" infinito
+
+## Discovery & Research
+
+Se realizó un benchmark de portfolios de diseñadoras UX/UI con perfil técnico, analizando patrones de estructura, tono de voz y nivel de detalle en la documentación de proyectos. Se identificaron los elementos que diferencian un portfolio memorable de uno funcional pero genérico.
+
+<ImageGrid cols={2}>
+  <ImagePlaceholder label="Benchmark de portfolios de referencia" />
+  <ImagePlaceholder label="Análisis de patrones de estructura y tono" />
+</ImageGrid>
+
+## Estrategia de Diseño
+
+Se definió una arquitectura de una sola página con secciones bien diferenciadas y un sistema de navegación sticky. El diseño parte de un tema oscuro por defecto con la posibilidad de desplazarse hacia el modo claro mediante un control de arrastre, comunicando jugabilidad e intención en la misma interacción.
+
+<ImagePlaceholder label="Sistema de temas y tokens de diseño" aspect="video" />
+
+## Exploración Visual
+
+Se exploraron tres direcciones visuales para el hero: tipografía editorial de gran escala, composición con fotografía integrada y una versión más minimalista centrada en el nombre. La versión final combina las tres capas mediante la animación de blobs de fondo que reaccionan al selector de tema.
+
+<ImageGrid cols={3}>
+  <ImagePlaceholder label="Dirección A — Tipografía editorial" />
+  <ImagePlaceholder label="Dirección B — Hero con fotografía" />
+  <ImagePlaceholder label="Dirección C — Composición final" />
+</ImageGrid>
+
+## Resultados e Impacto
+
+- Diseño e implementación completos usando IA como copiloto en cada etapa del proceso
+- De concepto a deploy en producción en 4 semanas con Next.js y Vercel
+- Sistema de temas con tokens CSS dinámicos que cambian en tiempo real sin recargar la página
+- Cada decisión de diseño documentada como parte de la narrativa del portfolio

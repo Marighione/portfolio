@@ -88,22 +88,24 @@ export default function Hero() {
                     MARIANA
                 </motion.div>
 
-                <div className="flex items-end">
+                <div className="relative">
+                    {/* Subtitle absolute so it doesn't shrink GHIONE's container */}
                     <motion.p
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.4 }}
-                        className="flex-1 max-w-[260px] pb-[1.6vw] text-sm leading-relaxed text-left"
+                        className="absolute bottom-[1.6vw] left-0 max-w-[260px] text-sm leading-relaxed"
                         style={{ color: "var(--text-muted)" }}
                     >
                         {t.hero.sub}
                     </motion.p>
 
+                    {/* Full-width block with text-right — right edge matches MARIANA exactly */}
                     <motion.h1
                         initial={{ opacity: 0, y: 60 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-right text-[11vw] font-normal tracking-tighter leading-[0.85] whitespace-nowrap"
+                        className="w-full text-right text-[11vw] font-normal tracking-tighter leading-[0.85] whitespace-nowrap"
                         style={{ color: "var(--heading)" }}
                     >
                         GHIONE

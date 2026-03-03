@@ -23,7 +23,7 @@ export default function About() {
                     {a.headline2}
                 </h2>
 
-                <div className="grid md:grid-cols-[1fr_320px] gap-12 md:gap-20 items-start">
+                <div className="grid md:grid-cols-[1fr_320px] gap-8 md:gap-10 items-start">
                     <div className="space-y-8">
                         <p className="text-base md:text-lg leading-relaxed opacity-90">
                             {a.p1}
@@ -48,7 +48,7 @@ export default function About() {
                                 <h3 className="text-xs font-semibold uppercase tracking-[0.2em] mb-2" style={{ color: "var(--accent)" }}>
                                     {a.edu_label}
                                 </h3>
-                                <p className="text-sm opacity-85">{a.edu_val}</p>
+                                <p className="text-sm opacity-85 text-pretty">{a.edu_val}</p>
                             </div>
 
                             <div className="h-px w-full" style={{ backgroundColor: "var(--border)" }} />

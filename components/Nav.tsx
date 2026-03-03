@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeDrag from "@/components/ThemeDrag";
@@ -9,6 +10,8 @@ const SECTION_IDS = ["hero", "about", "work", "resume", "contact"] as const;
 
 export default function Nav() {
     const { t } = useLanguage();
+    const pathname = usePathname();
+    const isHome = pathname === "/";
     const [active, setActive] = useState<string>("hero");
 
     const navLinks = [
@@ -46,11 +49,12 @@ export default function Nav() {
                     {navLinks.map(({ id, label }) => (
                         <li key={id}>
                             <a
-                                href={`#${id}`}
-                                className={`block text-sm transition-colors duration-200 ${active === id
-                                    ? "font-semibold brightness-110"
-                                    : "opacity-40 hover:opacity-100"
-                                    }`}
+                                href={isHome ? `#${id}` : `/#${id}`}
+                                className={`block text-sm transition-colors duration-200 ${
+                                    isHome && active === id
+                                        ? "font-semibold brightness-110"
+                                        : "opacity-40 hover:opacity-100"
+                                }`}
                             >
                                 {label}
                             </a>

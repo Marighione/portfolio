@@ -20,12 +20,12 @@ export default function Contact() {
     const c = t.contact;
 
     return (
-        <section id="contact" className="py-32">
+        <section id="contact" className="pb-12 pt-32">
             <PageContainer>
-                <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-end">
+                <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-stretch">
 
                     {/* Texto */}
-                    <div>
+                    <div className="flex flex-col">
                         <p
                             className="text-xs tracking-[0.2em] uppercase mb-6"
                             style={{ color: "var(--accent)" }}
@@ -37,7 +37,7 @@ export default function Contact() {
                             {c.headline}
                         </h2>
 
-                        <p className="text-lg leading-relaxed mb-14 opacity-85">
+                        <p className="text-lg leading-relaxed mb-24 opacity-85">
                             {c.sub}
                         </p>
 
@@ -54,24 +54,30 @@ export default function Contact() {
                                 </a>
                             ))}
                         </div>
-
-                        <p className="mt-24 text-xs opacity-55">
-                            {c.built} · {new Date().getFullYear()}
-                        </p>
                     </div>
 
                     {/* Imagen */}
-                    <div className="relative w-full h-[480px] md:h-[560px]">
+                    <div className="relative w-full">
+                        {/* Aura layer — z-0, driven by --accent via .portrait-aura in globals.css */}
+                        <div className="portrait-aura" aria-hidden="true" />
+
+                        {/* Photo sits above the aura */}
                         <Image
-                            src="/foto_prueba.png"
+                            src="/foto_sin_fondo.png"
                             alt="Mariana Ghione"
                             fill
-                            className="object-contain object-bottom"
+                            className="object-contain object-bottom scale-105 z-10"
                             priority
                         />
                     </div>
 
                 </div>
+            </PageContainer>
+
+            <PageContainer>
+                <p className="mt-16 text-xs opacity-55">
+                    {c.built} · {new Date().getFullYear()}
+                </p>
             </PageContainer>
         </section>
     );

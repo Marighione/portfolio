@@ -4,14 +4,14 @@ export const en: Dictionary = {
     nav: {
         about: "About",
         work: "Work",
-        resume: "CV",
+        resume: "Experience",
         contact: "Contact",
     },
     hero: {
         role: "UX/UI Designer",
         headline1: "Design that",
         headline2: "converts.",
-        sub: "I design digital products where business, data, and user experience coexist with coherence.",
+    
         cta_work: "See my work",
         cta_contact: "Get in touch",
         scroll: "Scroll",
@@ -64,7 +64,7 @@ export const en: Dictionary = {
                 period: "2023 – Present",
             },
             {
-                degree: "Kinesiology (incomplete)",
+                degree: "Bachelor's Degree in Physiotherapy",
                 institution: "Universidad de Mendoza",
                 period: "2009 – 2014",
             },
@@ -77,15 +77,19 @@ export const en: Dictionary = {
                 period: "February 2026",
             },
             {
-                degree: "UX/UI Development Track",
+                degree: "UI Course",
                 institution: "Coderhouse",
-                period: "February 2022 — January 2023",
-                details: [
-                    "Photoshop & Illustrator",
-                    "UX/UI Design",
-                    "Advanced UX/UI Design",
-                    "Web Development",
-                ],
+                period: "June 2023 — August 2023",
+            },
+            {
+                degree: "English for Design (Intermediate Level)",
+                institution: "Coderhouse",
+                period: "March 2023 — July 2023",
+            },
+            {
+                degree: "Agile Project Management",
+                institution: "Coursera",
+                period: "March 2023 — May 2023",
             },
             {
                 degree: "UX Writing",
@@ -93,19 +97,15 @@ export const en: Dictionary = {
                 period: "August 2022 — November 2022",
             },
             {
-                degree: "English for Design (Intermediate)",
+                degree: "UX/UI Development Track",
                 institution: "Coderhouse",
-                period: "March 2023 — July 2023",
-            },
-            {
-                degree: "UI Course",
-                institution: "Coderhouse",
-                period: "June 2023 — August 2023",
-            },
-            {
-                degree: "Agile Project Management",
-                institution: "Coursera",
-                period: "March 2023 — May 2023",
+                period: "February 2022 — January 2023",
+                details: [
+                    "Photoshop & Illustrator Course",
+                    "UX/UI Design Course",
+                    "Advanced UX/UI Design Course",
+                    "Web Development Course",
+                ],
             },
         ],
     },

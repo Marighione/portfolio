@@ -8,11 +8,11 @@ import type { Project } from "@/lib/getProjects";
 import PageContainer from "@/components/PageContainer";
 
 export default function WorkPreview() {
-    const { t } = useLanguage();
+    const { t, locale } = useLanguage();
     const [projects, setProjects] = useState<Project[]>([]);
 
     useEffect(() => {
-        fetch("/api/projects")
+        fetch("/api/projects", { cache: "no-store" })
             .then((r) => r.json())
             .then((data: Project[]) => setProjects(data))
             .catch(() => setProjects([]));
@@ -60,10 +60,14 @@ export default function WorkPreview() {
 
                             <div className="pt-6">
                                 <h3 className="text-xl font-semibold tracking-tight">
-                                    {project.title}
+                                    {locale === "en" && project.titleEn
+                                        ? project.titleEn
+                                        : project.title}
                                 </h3>
                                 <p className="mt-2 text-sm leading-relaxed opacity-80">
-                                    {project.description}
+                                    {locale === "en" && project.descriptionEn
+                                        ? project.descriptionEn
+                                        : project.description}
                                 </p>
                             </div>
                         </Link>
