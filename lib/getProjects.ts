@@ -35,7 +35,10 @@ export async function getProjects(): Promise<Project[]> {
                 descriptionEn: (data.descriptionEn as string) ?? undefined,
                 tags: (data.tags as string[]) ?? [],
                 year: (data.year as number) ?? new Date().getFullYear(),
-                coverImage: (data.coverImage as string) ?? "",
+                coverImage: (() => {
+                    const base = (data.coverImage as string) ?? "";
+                    return base ? base + (base.includes("?") ? "&v=2" : "?v=2") : "";
+                })(),
                 role: (data.role as string) ?? undefined,
                 duration: (data.duration as string) ?? undefined,
                 team: (data.team as string) ?? undefined,
@@ -62,7 +65,10 @@ export async function getProjectBySlug(
             descriptionEn: (data.descriptionEn as string) ?? undefined,
             tags: (data.tags as string[]) ?? [],
             year: (data.year as number) ?? new Date().getFullYear(),
-            coverImage: (data.coverImage as string) ?? "",
+            coverImage: (() => {
+                const base = (data.coverImage as string) ?? "";
+                return base ? base + (base.includes("?") ? "&v=2" : "?v=2") : "";
+            })(),
             role: (data.role as string) ?? undefined,
             duration: (data.duration as string) ?? undefined,
             team: (data.team as string) ?? undefined,

@@ -22,7 +22,7 @@ export const en: Dictionary = {
         headline2: "systemic thinking.",
         p1: "I'm a UX/UI designer with experience in digital products for web and mobile. I work end-to-end: from research and strategic definition to interface design and development validation.",
         p2: "I'm interested in understanding how a product works in depth: metrics, flows, architecture, and technical decisions. Design, for me, is structure before surface.\n\nI integrate AI-based tools as part of my workflow: to accelerate research, structure documentation, explore solutions, and optimize iterations. Not as a trend, but as a concrete way to improve time, clarity, and decision quality.",
-        edu_label: "Education",
+        edu_label: "",
         edu_val: "Technical Degree in Digital Graphic Design",
         tools_label: "Tools",
         tools_val: "Figma · Illustrator · Photoshop · Blender",
@@ -55,7 +55,7 @@ export const en: Dictionary = {
                     "Designed social impact digital products, covering research, information architecture, UX writing, and interface design.\n\nDeveloped the organization's internal management system from discovery to final UI design, aligning operational needs with a clear and scalable solution.",
             },
         ],
-        edu_label: "Education",
+        edu_label: "",
         edu_academic_label: "Academic Education",
         edu_academic: [
             {

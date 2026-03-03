@@ -20,7 +20,7 @@ export const es = {
         headline2: "mirada sistémica",
         p1: "Soy diseñadora UX/UI con experiencia en productos digitales para web y mobile. Trabajo de forma integral: desde la investigación y definición estratégica hasta el diseño de interfaz y la validación con desarrollo.",
         p2: "Me interesa comprender cómo funciona el producto en profundidad: métricas, flujos, arquitectura y decisiones técnicas. El diseño, para mí, es estructura antes que superficie.\n\nIntegro herramientas basadas en inteligencia artificial como parte del proceso de trabajo: para acelerar investigación, estructurar documentación, explorar soluciones y optimizar iteraciones. No como tendencia, sino como una forma concreta de mejorar tiempos, claridad y calidad de decisión.",
-        edu_label: "Formación",
+        edu_label: "Formación Académica",
         edu_val: "Técnica Superior en Diseño Gráfico Digital",
         tools_label: "Herramientas",
         tools_val: "Figma · Illustrator · Photoshop · Blender",
@@ -53,7 +53,7 @@ export const es = {
                     "Diseñé productos digitales de impacto social, abarcando investigación, arquitectura de información, UX writing y diseño de interfaces.\n\nDesarrollé el sistema de gestión interno de la organización desde discovery hasta diseño UI final, alineando necesidades operativas con una solución clara y escalable.",
             },
         ],
-        edu_label: "Formación",
+        edu_label: "",
         edu_academic_label: "Formación Académica",
         edu_academic: [
             {
@@ -68,44 +68,44 @@ export const es = {
             },
         ],
         edu_complementary_label: "Formación Complementaria",
-edu_complementary: [
-    {
-        degree: "Curso AI para UXers",
-        institution: "Interface School",
-        period: "Febrero 2026",
-    },
-    {
-        degree: "Curso UI",
-        institution: "Coderhouse",
-        period: "Junio 2023 — Agosto 2023",
-    },
-    {
-        degree: "Curso Inglés para Diseño (Intermediate Level)",
-        institution: "Coderhouse",
-        period: "Marzo 2023 — Julio 2023",
-    },
-    {
-        degree: "Curso Agile Project Management",
-        institution: "Coursera",
-        period: "Marzo 2023 — Mayo 2023",
-    },
-    {
-        degree: "Curso UX Writing",
-        institution: "Coderhouse",
-        period: "Agosto 2022 — Noviembre 2022",
-    },
-    {
-        degree: "Carrera de Desarrollo UX/UI",
-        institution: "Coderhouse",
-        period: "Febrero 2022 — Enero 2023",
-        details: [
-            "Curso Photoshop e Illustrator",
-            "Curso Diseño UX/UI",
-            "Curso Diseño UX/UI Avanzado",
-            "Curso Desarrollo Web",
+        edu_complementary: [
+            {
+                degree: "Curso AI para UXers",
+                institution: "Interface School",
+                period: "Febrero 2026",
+            },
+            {
+                degree: "Curso UI",
+                institution: "Coderhouse",
+                period: "Junio 2023 — Agosto 2023",
+            },
+            {
+                degree: "Curso Inglés para Diseño (Intermediate Level)",
+                institution: "Coderhouse",
+                period: "Marzo 2023 — Julio 2023",
+            },
+            {
+                degree: "Curso Agile Project Management",
+                institution: "Coursera",
+                period: "Marzo 2023 — Mayo 2023",
+            },
+            {
+                degree: "Curso UX Writing",
+                institution: "Coderhouse",
+                period: "Agosto 2022 — Noviembre 2022",
+            },
+            {
+                degree: "Carrera de Desarrollo UX/UI",
+                institution: "Coderhouse",
+                period: "Febrero 2022 — Enero 2023",
+                details: [
+                    "Curso Photoshop e Illustrator",
+                    "Curso Diseño UX/UI",
+                    "Curso Diseño UX/UI Avanzado",
+                    "Curso Desarrollo Web",
+                ],
+            },
         ],
-    },
-],
     },
     contact: {
         label: "Contacto",

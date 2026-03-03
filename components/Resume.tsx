@@ -45,9 +45,11 @@ export default function Resume() {
                     ))}
                 </div>
 
-                <p className="text-xs tracking-[0.2em] uppercase mb-6" style={{ color: "var(--accent)" }}>
-                    {r.edu_label}
-                </p>
+                {r.edu_label && (
+                    <p className="text-xs tracking-[0.2em] uppercase mb-6" style={{ color: "var(--accent)" }}>
+                        {r.edu_label}
+                    </p>
+                )}
 
                 <div className="space-y-16">
                     <div>

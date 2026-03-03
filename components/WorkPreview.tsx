@@ -20,7 +20,7 @@ export default function WorkPreview() {
 
     return (
         <section id="work" className="py-32">
-            <PageContainer>
+            <PageContainer className="max-w-[1400px]">
                 <p
                     className="text-xs tracking-[0.2em] uppercase mb-6"
                     style={{ color: "var(--accent)" }}
@@ -32,12 +32,22 @@ export default function WorkPreview() {
                     {t.work.headline}
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-                    {projects.map((project) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+                    {projects.map((project, index) => {
+                        const isThreeProjects = projects.length === 3;
+                        const isThird = index === 2;
+
+                        const layoutClasses = isThreeProjects
+                            ? isThird
+                                ? "md:col-start-2 md:row-start-2 md:self-center md:-translate-y-1/2"
+                                : "md:col-start-1"
+                            : "";
+
+                        return (
                         <Link
                             key={project.slug}
                             href={`/work/${project.slug}`}
-                            className="group block"
+                            className={`group block ${layoutClasses}`}
                         >
                             <div
                                 className="rounded-2xl overflow-hidden border transition-transform duration-300 group-hover:-translate-y-0.5"
@@ -51,8 +61,8 @@ export default function WorkPreview() {
                                         src={project.coverImage}
                                         alt={project.title}
                                         fill
-                                        sizes="(max-width: 1024px) 100vw, 33vw"
-                                        className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        className="object-cover object-center transition-all duration-500 group-hover:scale-[1.03] group-hover:blur-[1px]"
                                         style={{ filter: "var(--image-filter)" }}
                                     />
                                 </div>
@@ -64,14 +74,15 @@ export default function WorkPreview() {
                                         ? project.titleEn
                                         : project.title}
                                 </h3>
-                                <p className="mt-2 text-sm leading-relaxed opacity-80">
+                                <p className="mt-2 text-sm font-light leading-relaxed opacity-80">
                                     {locale === "en" && project.descriptionEn
                                         ? project.descriptionEn
                                         : project.description}
                                 </p>
                             </div>
                         </Link>
-                    ))}
+                        );
+                    })}
                 </div>
             </PageContainer>
         </section>

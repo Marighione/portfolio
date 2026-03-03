@@ -63,7 +63,7 @@ export default function Contact() {
 
                         {/* Photo sits above the aura */}
                         <Image
-                            src="/foto_sin_fondo.png"
+                            src="/foto_sin_fondo1.png"
                             alt="Mariana Ghione"
                             fill
                             className="object-contain object-bottom scale-105 z-10"

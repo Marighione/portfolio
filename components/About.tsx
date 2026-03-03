@@ -45,9 +45,14 @@ export default function About() {
                     >
                         <div className="space-y-6">
                             <div>
-                                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] mb-2" style={{ color: "var(--accent)" }}>
-                                    {a.edu_label}
-                                </h3>
+                                {a.edu_label && (
+                                    <h3
+                                        className="text-xs font-semibold uppercase tracking-[0.2em] mb-2"
+                                        style={{ color: "var(--accent)" }}
+                                    >
+                                        {a.edu_label}
+                                    </h3>
+                                )}
                                 <p className="text-sm opacity-85 text-pretty">{a.edu_val}</p>
                             </div>
 

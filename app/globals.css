@@ -5,7 +5,7 @@
 
 /**
  * Global theme variables (tokens por rol).
- * Se actualizan en vivo desde el ThemeDrag.
+ * Se activan vía data-theme en <html>.
  */
 :root {
   --bg: #101114;
@@ -19,6 +19,185 @@
   --fg: var(--heading);
   --muted: var(--text-muted);
   --image-filter: brightness(0.94) contrast(1.05) saturate(0.94);
+  --ui: var(--surface);
+  --ui-border: var(--border);
+  --accent-contrast: var(--fg);
+  --focus: var(--accent-subtle);
+}
+
+/* ── Temas discretos — tokens extraídos de la versión previa ─────────────── */
+
+/* Dark blue (default) */
+:root[data-theme="dark_blue"] {
+  --bg: #101114;
+  --surface: #171821;
+  --border: #242634;
+  --text: #e8e7e4;
+  --text-muted: #a6a5b0;
+  --heading: #f4f3ef;
+  --accent: hsl(278 60% 56%);
+  --accent-subtle: hsl(278 60% 56% / 0.16);
+  --fg: #f4f3ef;
+  --muted: #a6a5b0;
+  --image-filter: brightness(0.94) contrast(1.05) saturate(0.94);
+}
+
+:root[data-theme="black"] {
+  --bg: #000000;
+  --surface: #0d0d0d;
+  --border: #1c1c1c;
+  --text: #d4d4d4;
+  --text-muted: #888888;
+  --heading: #f5f5f5;
+  --accent: hsl(265 68% 64%);
+  --accent-subtle: hsl(265 68% 64% / 0.15);
+  --fg: #f5f5f5;
+  --muted: #888888;
+  --image-filter: brightness(0.90) contrast(1.10) saturate(0.88);
+}
+
+:root[data-theme="dark_navy"] {
+  --bg: #0d1929;
+  --surface: #132238;
+  --border: #1d3052;
+  --text: #c4d4e8;
+  --text-muted: #6e90b2;
+  --heading: #dceeff;
+  --accent: hsl(214 88% 62%);
+  --accent-subtle: hsl(214 88% 62% / 0.16);
+  --fg: #dceeff;
+  --muted: #6e90b2;
+  --image-filter: brightness(0.92) contrast(1.04) saturate(0.94);
+}
+
+:root[data-theme="dark_teal"] {
+  --bg: #0a1e1e;
+  --surface: #102828;
+  --border: #1a3838;
+  --text: #aed4d0;
+  --text-muted: #5e9490;
+  --heading: #cceeea;
+  --accent: hsl(174 68% 44%);
+  --accent-subtle: hsl(174 68% 44% / 0.16);
+  --fg: #cceeea;
+  --muted: #5e9490;
+  --image-filter: brightness(0.92) contrast(1.04) saturate(0.94);
+}
+
+:root[data-theme="purple"] {
+  --bg: #160e2a;
+  --surface: #1e1438;
+  --border: #2c2050;
+  --text: #ccc0e4;
+  --text-muted: #8878b4;
+  --heading: #e4d8ff;
+  --accent: hsl(278 78% 66%);
+  --accent-subtle: hsl(278 78% 66% / 0.16);
+  --fg: #e4d8ff;
+  --muted: #8878b4;
+  --image-filter: brightness(0.92) contrast(1.04) saturate(0.94);
+}
+
+:root[data-theme="pink"] {
+  --bg: #1e0e18;
+  --surface: #281424;
+  --border: #381c34;
+  --text: #e0b8cc;
+  --text-muted: #a87090;
+  --heading: #f0d0e0;
+  --accent: hsl(338 72% 60%);
+  --accent-subtle: hsl(338 72% 60% / 0.16);
+  --fg: #f0d0e0;
+  --muted: #a87090;
+  --image-filter: brightness(0.92) contrast(1.04) saturate(0.94);
+}
+
+:root[data-theme="brown"] {
+  --bg: #1a1208;
+  --surface: #231a10;
+  --border: #322418;
+  --text: #d8c8b0;
+  --text-muted: #988068;
+  --heading: #eddcc8;
+  --accent: hsl(28 70% 52%);
+  --accent-subtle: hsl(28 70% 52% / 0.16);
+  --fg: #eddcc8;
+  --muted: #988068;
+  --image-filter: brightness(0.92) contrast(1.04) saturate(0.94);
+}
+
+:root[data-theme="beige"] {
+  --bg: #f0ede6;
+  --surface: #e8e4da;
+  --border: #d0ccc0;
+  --text: #3c3830;
+  --text-muted: #706c60;
+  --heading: #1c1814;
+  --accent: hsl(26 62% 40%);
+  --accent-subtle: hsl(26 62% 40% / 0.12);
+  --fg: #1c1814;
+  --muted: #706c60;
+  --image-filter: brightness(1.02) contrast(0.97) saturate(0.94);
+}
+
+:root[data-theme="olive"] {
+  --bg: #1e2214;
+  --surface: #262c1c;
+  --border: #343e28;
+  --text: #c4cc98;
+  --text-muted: #7a8858;
+  --heading: #d8e0aa;
+  --accent: hsl(82 50% 50%);
+  --accent-subtle: hsl(82 50% 50% / 0.16);
+  --fg: #d8e0aa;
+  --muted: #7a8858;
+  --image-filter: brightness(0.92) contrast(1.04) saturate(0.94);
+}
+
+/* Sage y Mint comparten la misma paleta base */
+:root[data-theme="sage"],
+:root[data-theme="mint"] {
+  --bg: #e8f5f0;
+  --surface: #dceee8;
+  --border: #b8d8cc;
+  --text: #1c3830;
+  --text-muted: #487064;
+  --heading: #0e2820;
+  --accent: hsl(162 50% 34%);
+  --accent-subtle: hsl(162 50% 34% / 0.12);
+  --fg: #0e2820;
+  --muted: #487064;
+  --image-filter: brightness(1.02) contrast(0.97) saturate(1.00);
+}
+
+:root[data-theme="light_blue"],
+:root[data-theme="very_light"] {
+  --bg: #f2f0ec;
+  --surface: #e9e6e0;
+  --border: #d0ccc4;
+  --text: #2e2c28;
+  --text-muted: #6c6860;
+  --heading: #141210;
+  --accent: hsl(328 58% 46%);
+  --accent-subtle: hsl(328 58% 46% / 0.12);
+  --fg: #141210;
+  --muted: #6c6860;
+  --image-filter: brightness(1.02) contrast(0.97) saturate(0.95);
+}
+
+/* White (último paso, fondo más claro) */
+:root[data-theme="white"] {
+  --bg: #ffffff;
+  --surface: #f5f5f5;
+  --border: #e0e0e0;
+  --text: #1a1a1a;
+  --text-muted: #606060;
+  --heading: #000000;
+  --accent: hsl(230 72% 55%);
+  --accent-subtle: hsl(230 72% 55% / 0.12);
+  --fg: #000000;
+  --muted: #606060;
+  --image-filter: brightness(1.00) contrast(1.00) saturate(1.00);
 }
 
 html, body {
@@ -30,6 +209,12 @@ body {
   color: var(--text);
   font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
   transition: background-color 240ms ease, color 240ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
 }
 
 h1, h2, h3, h4 {
@@ -99,6 +284,21 @@ a {
     transparent 68%
   );
   filter: blur(78px);
+}
+
+/* Tema slider knob */
+.theme-slider-knob {
+  transition:
+    transform 120ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+/* Respeta prefers-reduced-motion sin romper el drag */
+@media (prefers-reduced-motion: reduce) {
+  .theme-slider-knob {
+    transition: none !important;
+  }
 }
 
 /* Respect user motion preference — keep a static glow, no animation */
