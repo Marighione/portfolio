@@ -9,7 +9,7 @@ export const es = {
         role: "Diseñadora UX/UI",
         headline1: "Diseño que",
         headline2: "convierte.",
-    
+        sub: "Diseño productos digitales donde el negocio, los datos y la experiencia de usuario conviven con coherencia.",
         cta_work: "Ver mis proyectos",
         cta_contact: "Escribime",
         scroll: "Scroll",

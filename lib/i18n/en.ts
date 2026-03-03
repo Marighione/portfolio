@@ -11,7 +11,7 @@ export const en: Dictionary = {
         role: "UX/UI Designer",
         headline1: "Design that",
         headline2: "converts.",
-    
+        sub: "I design digital products where business, data, and user experience work together coherently.",
         cta_work: "See my work",
         cta_contact: "Get in touch",
         scroll: "Scroll",
