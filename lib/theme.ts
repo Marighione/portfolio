@@ -16,9 +16,13 @@ export type ThemeId =
     | "very_light"
     | "white";
 
-// Ordenado de más oscuro (arriba del slider) a más claro (abajo)
+/**
+ * Orden de temas: más oscuro (arriba del slider) → más claro (abajo).
+ * Comportamiento inspirado en billysweeney.com: arrastrar o scroll sobre el slider.
+ * Para usar las paletas exactas de esa web, inspeccionar en DevTools y copiar --bg, --text, --accent.
+ */
 export const THEME_ORDER: ThemeId[] = [
-    "black",       // fondo casi negro, texto claro
+    "black",
     "dark_navy",
     "dark_blue",
     "dark_teal",
@@ -31,7 +35,17 @@ export const THEME_ORDER: ThemeId[] = [
     "beige",
     "light_blue",
     "very_light",
-    "white",       // fondo blanco, texto casi negro
+    "white",
+];
+
+/** Progresión mínima estilo Billy (solo 6 pasos negro → blanco). Sustituir THEME_ORDER por esta constante si se prefiere. */
+export const BILLY_STYLE_ORDER: ThemeId[] = [
+    "black",
+    "dark_navy",
+    "dark_blue",
+    "light_blue",
+    "very_light",
+    "white",
 ];
 
 const STORAGE_KEY = "theme";

@@ -87,6 +87,19 @@ export default function ThemeDrag() {
         [commitIndex, index],
     );
 
+    // Scroll sobre el slider para cambiar tema (estilo billysweeney.com)
+    useEffect(() => {
+        const el = trackRef.current;
+        if (!el) return;
+        const handler = (e: WheelEvent) => {
+            e.preventDefault();
+            if (e.deltaY > 0) commitIndex(index + 1);
+            else if (e.deltaY < 0) commitIndex(index - 1);
+        };
+        el.addEventListener("wheel", handler, { passive: false });
+        return () => el.removeEventListener("wheel", handler);
+    }, [index, commitIndex]);
+
     const pct = themeCount > 1 ? (index / (themeCount - 1)) * 100 : 0;
 
     return (
@@ -127,7 +140,7 @@ export default function ThemeDrag() {
 
                 <button
                     type="button"
-                    className="theme-slider-knob pointer-events-auto absolute left-1/2 -translate-x-1/2 rounded-full border shadow-sm outline-none focus-visible:ring-2"
+                    className="theme-slider-knob pointer-events-auto absolute rounded-full border shadow-sm outline-none focus-visible:ring-2"
                     role="slider"
                     aria-label="Tema y paleta"
                     aria-orientation="vertical"
@@ -138,10 +151,13 @@ export default function ThemeDrag() {
                     tabIndex={0}
                     onKeyDown={onKeyDown}
                     style={{
+                        left: "50%",
                         top: `${pct}%`,
                         width: 16,
                         height: 16,
-                        transform: "translate(-50%, -50%)",
+                        marginLeft: -8,
+                        marginTop: -8,
+                        transform: "none",
                         backgroundColor: "var(--accent)",
                         borderColor: "var(--border)",
                         boxShadow:
