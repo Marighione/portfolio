@@ -14,7 +14,7 @@ export default function ThemeDrag() {
     const dragging = useRef(false);
     // Usamos un valor fijo para SSR y primer render del cliente
     // y luego sincronizamos con `localStorage` en un efecto.
-    const [index, setIndex] = useState(() => getThemeIndex("dark_blue"));
+    const [index, setIndex] = useState(() => getThemeIndex("theme--00"));
 
     const themeCount = THEME_ORDER.length;
 

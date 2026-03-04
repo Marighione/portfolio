@@ -1,102 +1,74 @@
 "use client";
 
+/** Temas de billysweeney.com: theme--00 (negro) a theme--16 (blanco). */
 export type ThemeId =
-    | "black"
-    | "dark_teal"
-    | "dark_navy"
-    | "dark_blue"
-    | "purple"
-    | "pink"
-    | "brown"
-    | "beige"
-    | "olive"
-    | "sage"
-    | "mint"
-    | "light_blue"
-    | "very_light"
-    | "white";
+    | "theme--00"
+    | "theme--01"
+    | "theme--02"
+    | "theme--03"
+    | "theme--04"
+    | "theme--05"
+    | "theme--06"
+    | "theme--07"
+    | "theme--08"
+    | "theme--09"
+    | "theme--10"
+    | "theme--11"
+    | "theme--12"
+    | "theme--13"
+    | "theme--14"
+    | "theme--15"
+    | "theme--16";
 
-/**
- * Orden de temas: más oscuro (arriba del slider) → más claro (abajo).
- * Comportamiento inspirado en billysweeney.com: arrastrar o scroll sobre el slider.
- * Para usar las paletas exactas de esa web, inspeccionar en DevTools y copiar --bg, --text, --accent.
- */
+/** Orden: más oscuro (arriba del slider) → más claro (abajo). Paletas de billysweeney.com. */
 export const THEME_ORDER: ThemeId[] = [
-    "black",
-    "dark_navy",
-    "dark_blue",
-    "dark_teal",
-    "purple",
-    "pink",
-    "brown",
-    "olive",
-    "sage",
-    "mint",
-    "beige",
-    "light_blue",
-    "very_light",
-    "white",
-];
-
-/** Progresión mínima estilo Billy (solo 6 pasos negro → blanco). Sustituir THEME_ORDER por esta constante si se prefiere. */
-export const BILLY_STYLE_ORDER: ThemeId[] = [
-    "black",
-    "dark_navy",
-    "dark_blue",
-    "light_blue",
-    "very_light",
-    "white",
+    "theme--00",
+    "theme--01",
+    "theme--02",
+    "theme--03",
+    "theme--04",
+    "theme--05",
+    "theme--06",
+    "theme--07",
+    "theme--08",
+    "theme--09",
+    "theme--10",
+    "theme--11",
+    "theme--12",
+    "theme--13",
+    "theme--14",
+    "theme--15",
+    "theme--16",
 ];
 
 const STORAGE_KEY = "theme";
 
-const DARK_THEMES = new Set<ThemeId>([
-    "black",
-    "dark_teal",
-    "dark_navy",
-    "dark_blue",
-    "purple",
-    "pink",
-    "brown",
-    "olive",
-]);
-
 export const clamp01 = (n: number) => Math.min(1, Math.max(0, n));
-
-const LEGACY_KEY = "portfolio-theme";
-
-const LEGACY_TO_THEME: Record<string, ThemeId> = {
-    dark: "dark_blue",
-    black: "black",
-    navy: "dark_navy",
-    teal: "dark_teal",
-    purple: "purple",
-    rose: "pink",
-    brown: "brown",
-    beige: "beige",
-    olive: "olive",
-    mint: "mint",
-    light: "very_light",
-    white: "white",
-};
 
 export function applyTheme(id: ThemeId) {
     if (typeof document === "undefined") return;
+    const body = document.body;
     const root = document.documentElement;
 
-    root.dataset.theme = id;
-    root.classList.toggle("dark", DARK_THEMES.has(id));
+    // Quitar cualquier clase theme--* y aplicar la nueva
+    const rest = body.className
+        .split(/\s+/)
+        .filter((c) => c && !c.startsWith("theme--"));
+    body.className = [...rest, id].filter(Boolean).join(" ");
+
+    const idx = THEME_ORDER.indexOf(id);
+    root.classList.toggle("dark", idx <= 8);
 
     try {
         window.localStorage.setItem(STORAGE_KEY, id);
     } catch {
-        // localStorage may be unavailable; ignore
+        // localStorage puede no estar disponible
     }
 }
 
 export function getInitialTheme(): ThemeId {
     if (typeof window === "undefined") {
-        return "dark_blue";
+        return "theme--00";
     }
 
     const stored = window.localStorage.getItem(STORAGE_KEY);
@@ -104,12 +76,7 @@ export function getInitialTheme(): ThemeId {
         return stored as ThemeId;
     }
 
-    const legacy = window.localStorage.getItem(LEGACY_KEY);
-    if (legacy && LEGACY_TO_THEME[legacy]) {
-        return LEGACY_TO_THEME[legacy];
-    }
-
-    return "dark_blue";
+    return "theme--00";
 }
 
 export function getThemeIndex(id: ThemeId): number {
